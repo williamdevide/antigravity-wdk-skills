@@ -1,56 +1,72 @@
 # Antigravity WDK Skills
 
-Este repositório contém **Agent Skills** e templates especializados para o ecossistema Antigravity WDK. Estas habilidades são projetadas para estender as capacidades da IA, permitindo a execução de tarefas complexas e a criação de interfaces de alto impacto de forma padronizada.
+> Repositório central de **Agent Skills** e templates especializados para o ecossistema Antigravity WDK.
+> Central repository for **Agent Skills** and specialized templates for the Antigravity WDK ecosystem.
 
-> [!IMPORTANT]
-> Este repositório está em desenvolvimento ativo. Novas skills são adicionadas conforme a evolução do ecossistema.
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Node](https://img.shields.io/badge/Node.js-18+-blue)
 
-## 🚀 Instalação via NPX
+---
 
-Você pode instalar qualquer skill deste repositório diretamente em seu projeto usando o comando `npx`:
+## 🇧🇷 Português
+
+### 📝 Descrição
+Este repositório contém habilidades projetadas para estender as capacidades de agentes de IA, permitindo a execução de tarefas complexas e a criação de interfaces de alto impacto de forma padronizada e profissional.
+
+### 🚀 Instalação via NPX
+Você pode instalar qualquer skill diretamente em seu projeto:
 
 ```bash
+# Instalar uma skill específica
 npx github:williamdevide/antigravity-wdk-skills add <nome-da-skill>
-```
 
-*Exemplo:*
-```bash
-npx github:williamdevide/antigravity-wdk-skills add criador-slidehtml
-```
-
-Este comando criará automaticamente a pasta `.agent/skills/<nome-da-skill>` em seu projeto atual.
-
-Para instalar **todas as skills** de uma vez, utilize:
-```bash
+# Instalar TODAS as skills de uma vez
 npx github:williamdevide/antigravity-wdk-skills add all
 ```
 
-## 📚 Skills Disponíveis
+### 📚 Skills Disponíveis
 
-| Skill | Descrição | Comando de Instalação |
+| Skill | Descrição | Comando |
 | :--- | :--- | :--- |
-| **Criador de Slides HTML** | Motor de slides fullpage com navegação interativa e design premium. | `add criador-slidehtml` |
-| **Criar README** | Gerador de README.md profissional e bilíngue (PT-BR/EN). | `add criar-readme` |
-| **Criar Script BAT** | Gerador de `iniciarSistema.bat` para execução local inteligente. | `add criar-bat` |
-| **Criar Guia Iniciar** | Gerador de `iniciar.md` com instruções passo a passo de terminal. | `add criar-iniciarmd` |
+| **criar-slidehtml** | Motor de slides fullpage com navegação interativa e design premium. | `add criar-slidehtml` |
+| **criar-readme** | Gerador de README.md profissional e bilíngue (PT-BR/EN). | `add criar-readme` |
+| **criar-bat** | Gerador de `iniciarSistema.bat` para execução local inteligente. | `add criar-bat` |
+| **criar-iniciar** | Gerador de `iniciar.md` com instruções passo a passo de terminal. | `add criar-iniciar` |
 
-## 👨‍💻 Criador e Mantenedor
+---
 
-Este ecossistema foi idealizado e desenvolvido por:
+## 🇺🇸 English
 
+### 📝 Description
+This repository contains skills designed to extend the capabilities of AI agents, enabling the execution of complex tasks and the creation of high-impact interfaces in a standardized and professional manner.
+
+### 🚀 Installation via NPX
+You can install any skill directly into your project:
+
+```bash
+# Install a specific skill
+npx github:williamdevide/antigravity-wdk-skills add <skill-name>
+
+# Install ALL skills at once
+npx github:williamdevide/antigravity-wdk-skills add all
+```
+
+### 📚 Available Skills
+
+| Skill | Description | Install Command |
+| :--- | :--- | :--- |
+| **criar-slidehtml** | Fullpage slide engine with interactive navigation and premium design. | `add criar-slidehtml` |
+| **criar-readme** | Professional and bilingual (PT-BR/EN) README.md generator. | `add criar-readme` |
+| **criar-bat** | Intelligent `iniciarSistema.bat` generator for local execution. | `add criar-bat` |
+| **criar-iniciar** | `iniciar.md` generator with step-by-step terminal instructions. | `add criar-iniciar` |
+
+---
+
+## 👨‍💻 Criador e Mantenedor / Author
 **William Devidé Komel**
 *   **LinkedIn:** [linkedin.com/in/williamdevide](https://www.linkedin.com/in/williamdevide)
-*   **E-mail:** [williamdevide@gmail.com](mailto:williamdevide@gmail.com)
+*   **GitHub:** [@williamdevide](https://github.com/williamdevide)
 
 ---
-
-## 🤝 Suporte
-
-Se você encontrar problemas ou tiver sugestões para novas skills, abra uma issue no [GitHub Issue Tracker](https://github.com/williamdevide/antigravity-wdk-skills/issues).
-
-## 📄 Licença
-
-Você é livre para copiar, modificar e distribuir estas skills sob os termos da licença MIT.
-
----
-**WDK Ecosystem** | *Potencializando a Inteligência Artificial*
+*Gerado com ❤️ pelo ecossistema WDK.*
