@@ -50,5 +50,8 @@ Uso: npx github:williamdevide/antigravity-wdk-skills add <nome-da-skill>
 
 Skills disponíveis:
 - criador-slidehtml
+- criar-readme
+- criar-bat
+- criar-iniciarmd
     `);
 }

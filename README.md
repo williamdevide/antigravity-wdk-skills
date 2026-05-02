@@ -25,6 +25,9 @@ Este comando criará automaticamente a pasta `.agent/skills/<nome-da-skill>` em 
 | Skill | Descrição | Comando de Instalação |
 | :--- | :--- | :--- |
 | **Criador de Slides HTML** | Motor de slides fullpage com navegação interativa e design premium. | `add criador-slidehtml` |
+| **Criar README** | Gerador de README.md profissional e bilíngue (PT-BR/EN). | `add criar-readme` |
+| **Criar Script BAT** | Gerador de `iniciarSistema.bat` para execução local inteligente. | `add criar-bat` |
+| **Criar Guia Iniciar** | Gerador de `iniciar.md` com instruções passo a passo de terminal. | `add criar-iniciarmd` |
 
 ## 👨‍💻 Criador e Mantenedor
 
