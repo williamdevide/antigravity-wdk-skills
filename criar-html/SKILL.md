@@ -8,11 +8,14 @@ description: Motor avançado de apresentações interativas HTML5. Focado em UX 
 Esta skill transforma textos brutos ou prompts criativos em apresentações digitais de alto impacto. O motor utiliza uma arquitetura de 17 layouts padronizados e inteligência artificial para mapear o conteúdo ao melhor design visual.
 
 ## 🛑 PROTOCOLO SOCRÁTICO (Obrigatório)
-Sempre que receber uma solicitação de criação de slides, você **DEVE** parar e perguntar:
-1. **Tema Desejado**: Escolha entre **Light** (Clean/Corporativo), **Dark** (Premium/Neon) ou **SENAI** (Institucional).
-2. **Identidade Visual**: 
-   - Se for tema **SENAI**, os logotipos e assets institucionais já estão integrados e **NÃO** podem ser substituídos.
-   - Se for **Light** ou **Dark**, qual é o logotipo ou marca que deve ser utilizado? (Gere um via IA se o usuário não fornecer).
+Sempre que receber uma solicitação de criação de slides, você **DEVE** seguir este fluxo:
+
+1. **Validação de Contexto**: Se o usuário já especificou o tema no prompt (ex: "utilize template-senai"), **NÃO** pergunte novamente. Pule para o passo 3.
+2. **Tema Desejado**: Se não especificado, escolha entre **Light**, **Dark** ou **SENAI**.
+3. **Gestão de Imagens**: Pergunte obrigatoriamente: "Deseja imagens inéditas geradas por IA (`generate_image`) ou prefere imagens padrão da internet/assets?".
+4. **Identidade Visual**: 
+   - Se for **SENAI**, os assets institucionais são travados.
+   - Se for **Light/Dark**, pergunte sobre o logotipo ou marca.
 
 ## 🧠 INTELIGÊNCIA DE LAYOUT
 Você deve analisar o conteúdo de cada slide e selecionar automaticamente o melhor layout entre os 17 disponíveis:
@@ -40,10 +43,10 @@ Você deve analisar o conteúdo de cada slide e selecionar automaticamente o mel
 ## 🏢 REGRAS OBRIGATÓRIAS TEMA SENAI
 Sempre que o tema **SENAI** for selecionado, as seguintes regras são mandatórias:
 - **Contagem de Slides**: Se o usuário solicitar $x$ slides, o total entregue será obrigatoriamente **$x+2$**.
-- **Slide 01 (Capa)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-primeiro.png`.
-- **Slide Final (Encerramento)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-ultimo.png`.
+- **Slide 01 (Capa)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-primeiro.png`. **ESTE SLIDE DEVE SER ENTREGUE LIMPO**, sem nenhum título, texto ou conteúdo gerado sobreposto.
+- **Slide Final (Encerramento)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-ultimo.png`. **ESTE SLIDE DEVE SER ENTREGUE LIMPO**, sem nenhum conteúdo gerado.
 - **Logotipo Interno**: Todos os slides (exceto o primeiro e o último) devem conter obrigatoriamente a imagem `assets/senai-logo.png`.
-- **Proibição de IA**: Para estas 3 imagens específicas (`senai-primeiro.png`, `senai-ultimo.png`, `senai-logo.png`), **NUNCA** utilize a ferramenta `generate_image`. Use sempre os arquivos existentes no template.
+- **Locked Assets (Proibição de IA)**: Para as imagens `senai-primeiro.png`, `senai-ultimo.png` e `senai-logo.png`, **NUNCA** utilize `generate_image`. Use sempre os arquivos originais.
 
 ## 🖼️ GESTÃO DE ATIVOS (Assets)
 - **Obrigatoriedade**: Todo projeto gerado **DEVE** possuir uma subpasta `assets/` contendo todas as imagens.
