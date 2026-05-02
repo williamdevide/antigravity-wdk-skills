@@ -18,17 +18,12 @@ if (cmd === 'add' && skillName) {
     console.log(`📦 Instalando: ${skillName}...\n`);
 
     try {
-        const repoUrl = 'https://github.com/williamdevide/antigravity-wdk-skills.git';
-        const tempDir = 'temp_skill_install_' + Math.random().toString(36).substring(7);
-        
-        // Clone minimal
-        execSync(`git clone --depth 1 ${repoUrl} ${tempDir}`, { stdio: 'ignore' });
-
+        const sourceBaseDir = __dirname;
         const availableSkills = ['criar-html', 'criar-readme', 'criar-bat', 'criar-iniciar'];
         const skillsToInstall = skillName === 'all' ? availableSkills : [skillName];
 
         for (const sName of skillsToInstall) {
-            const sourcePath = path.join(tempDir, sName);
+            const sourcePath = path.join(sourceBaseDir, sName);
             const sTargetDir = path.join(targetBaseDir, sName);
 
             if (fs.existsSync(sourcePath)) {
@@ -40,12 +35,9 @@ if (cmd === 'add' && skillName) {
                 fs.cpSync(sourcePath, sTargetDir, { recursive: true });
                 console.log(`✅ Sucesso! Skill instalada em: .agent/skills/${sName}`);
             } else if (skillName !== 'all') {
-                console.error(`❌ Erro: A skill '${sName}' não foi encontrada no repositório.`);
+                console.error(`❌ Erro: A skill '${sName}' não foi encontrada.`);
             }
         }
-
-        // Cleanup com retentativas para evitar EPERM no Windows
-        fs.rmSync(tempDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
     } catch (err) {
         console.error(`❌ Erro fatal: ${err.message}`);
     }

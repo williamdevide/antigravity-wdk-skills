@@ -11,7 +11,7 @@ Esta skill transforma textos brutos ou prompts criativos em apresentações digi
 Sempre que receber uma solicitação de criação de slides, você **DEVE** parar e perguntar:
 1. **Tema Desejado**: Escolha entre **Light** (Clean/Corporativo), **Dark** (Premium/Neon) ou **SENAI** (Institucional).
 2. **Identidade Visual**: 
-   - Se for tema **SENAI**, o logotipo padrão já está integrado.
+   - Se for tema **SENAI**, os logotipos e assets institucionais já estão integrados e **NÃO** podem ser substituídos.
    - Se for **Light** ou **Dark**, qual é o logotipo ou marca que deve ser utilizado? (Gere um via IA se o usuário não fornecer).
 
 ## 🧠 INTELIGÊNCIA DE LAYOUT
@@ -36,6 +36,14 @@ Você deve analisar o conteúdo de cada slide e selecionar automaticamente o mel
 | 15 | **Strip Top** | Destaque visual panorâmico no topo do slide. |
 | 16 | **Strip Bottom** | Destaque visual panorâmico na base do slide. |
 | 17 | **Vertical Steps** | Lista numerada vertical para planos de ação. |
+
+## 🏢 REGRAS OBRIGATÓRIAS TEMA SENAI
+Sempre que o tema **SENAI** for selecionado, as seguintes regras são mandatórias:
+- **Contagem de Slides**: Se o usuário solicitar $x$ slides, o total entregue será obrigatoriamente **$x+2$**.
+- **Slide 01 (Capa)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-primeiro.png`.
+- **Slide Final (Encerramento)**: Deve ser obrigatoriamente o slide que utiliza a imagem `assets/senai-ultimo.png`.
+- **Logotipo Interno**: Todos os slides (exceto o primeiro e o último) devem conter obrigatoriamente a imagem `assets/senai-logo.png`.
+- **Proibição de IA**: Para estas 3 imagens específicas (`senai-primeiro.png`, `senai-ultimo.png`, `senai-logo.png`), **NUNCA** utilize a ferramenta `generate_image`. Use sempre os arquivos existentes no template.
 
 ## 🖼️ GESTÃO DE ATIVOS (Assets)
 - **Obrigatoriedade**: Todo projeto gerado **DEVE** possuir uma subpasta `assets/` contendo todas as imagens.
