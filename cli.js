@@ -44,8 +44,8 @@ if (cmd === 'add' && skillName) {
             }
         }
 
-        // Cleanup
-        fs.rmSync(tempDir, { recursive: true, force: true });
+        // Cleanup com retentativas para evitar EPERM no Windows
+        fs.rmSync(tempDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
     } catch (err) {
         console.error(`❌ Erro fatal: ${err.message}`);
     }
