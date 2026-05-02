@@ -1,0 +1,21 @@
+{
+  "name": "@williamdevide/antigravity-wdk-skills",
+  "version": "1.0.0",
+  "description": "CLI para instalação de skills do ecossistema WDK",
+  "main": "cli.js",
+  "bin": {
+    "wdk-skills": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamdevide/antigravity-wdk-skills.git"
+  },
+  "keywords": [
+    "antigravity",
+    "wdk",
+    "skills",
+    "cli"
+  ],
+  "author": "William Devidé Komel <williamdevide@gmail.com>",
+  "license": "MIT"
+}

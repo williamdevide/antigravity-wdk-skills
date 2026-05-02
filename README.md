@@ -5,26 +5,36 @@ Este repositório contém **Agent Skills** e templates especializados para o eco
 > [!IMPORTANT]
 > Este repositório está em desenvolvimento ativo. Novas skills são adicionadas conforme a evolução do ecossistema.
 
-## 🛠️ Instalação e Uso
+## 🚀 Instalação via NPX
 
-Para utilizar estas skills em seu projeto Antigravity:
-
-1. Adicione o repositório como referência ou clone as pastas desejadas para o diretório `.agent/skills/` do seu projeto.
-2. Informe ao seu assistente Antigravity sobre a localização das novas skills.
+Você pode instalar qualquer skill deste repositório diretamente em seu projeto usando o comando `npx`:
 
 ```bash
-# Exemplo de inclusão via terminal
-mkdir -p .agent/skills/
-git clone https://github.com/williamdevide/antigravity-wdk-skills.git temp_skills
-cp -r temp_skills/criador-slidehtml .agent/skills/
-rm -rf temp_skills
+npx github:williamdevide/antigravity-wdk-skills add <nome-da-skill>
 ```
+
+*Exemplo:*
+```bash
+npx github:williamdevide/antigravity-wdk-skills add criador-slidehtml
+```
+
+Este comando criará automaticamente a pasta `.agent/skills/<nome-da-skill>` em seu projeto atual.
 
 ## 📚 Skills Disponíveis
 
-| Skill | Descrição | Link |
+| Skill | Descrição | Comando de Instalação |
 | :--- | :--- | :--- |
-| **Criador de Slides HTML** | Motor de slides fullpage com navegação interativa e design premium. | [Visualizar](criador-slidehtml/) |
+| **Criador de Slides HTML** | Motor de slides fullpage com navegação interativa e design premium. | `add criador-slidehtml` |
+
+## 👨‍💻 Criador e Mantenedor
+
+Este ecossistema foi idealizado e desenvolvido por:
+
+**William Devidé Komel**
+*   **LinkedIn:** [linkedin.com/in/williamdevide](https://www.linkedin.com/in/williamdevide)
+*   **E-mail:** [williamdevide@gmail.com](mailto:williamdevide@gmail.com)
+
+---
 
 ## 🤝 Suporte
 
@@ -32,7 +42,7 @@ Se você encontrar problemas ou tiver sugestões para novas skills, abra uma iss
 
 ## 📄 Licença
 
-Você é livre para copiar, modificar e distribuir estas skills sob os termos da licença MIT. Veja o arquivo LICENSE para detalhes (em breve).
+Você é livre para copiar, modificar e distribuir estas skills sob os termos da licença MIT.
 
 ---
 **WDK Ecosystem** | *Potencializando a Inteligência Artificial*
