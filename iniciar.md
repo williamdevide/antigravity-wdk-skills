@@ -21,7 +21,12 @@ CLI para instalação de skills do ecossistema WDK, permitindo a expansão das c
 
 3. **Instalar uma Skill em um Projeto Local**
    ```bash
-   node f:\antigravity\projetos\antigravity-wdk-skills-main\cli.js add criar-readme
+   node f:\antigravity\projetos\antigravity-wdk-skills-main\cli.js add <nome-da-skill>
+   ```
+
+4. **Instalar Todas as Skills de uma Vez**
+   ```bash
+   node f:\antigravity\projetos\antigravity-wdk-skills-main\cli.js add all
    ```
 
 ---

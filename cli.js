@@ -23,19 +23,25 @@ if (cmd === 'add' && skillName) {
         
         // Clone minimal
         execSync(`git clone --depth 1 ${repoUrl} ${tempDir}`, { stdio: 'ignore' });
-        
-        const sourcePath = path.join(tempDir, skillName);
-        
-        if (fs.existsSync(sourcePath)) {
-            if (fs.existsSync(targetDir)) {
-                console.log(`⚠️  A skill '${skillName}' já existe. Sobrescrevendo...`);
-                fs.rmSync(targetDir, { recursive: true, force: true });
+
+        const availableSkills = ['criador-slidehtml', 'criar-readme', 'criar-bat', 'criar-iniciarmd'];
+        const skillsToInstall = skillName === 'all' ? availableSkills : [skillName];
+
+        for (const sName of skillsToInstall) {
+            const sourcePath = path.join(tempDir, sName);
+            const sTargetDir = path.join(targetBaseDir, sName);
+
+            if (fs.existsSync(sourcePath)) {
+                if (fs.existsSync(sTargetDir)) {
+                    console.log(`⚠️  A skill '${sName}' já existe. Sobrescrevendo...`);
+                    fs.rmSync(sTargetDir, { recursive: true, force: true });
+                }
+                
+                fs.cpSync(sourcePath, sTargetDir, { recursive: true });
+                console.log(`✅ Sucesso! Skill instalada em: .agent/skills/${sName}`);
+            } else if (skillName !== 'all') {
+                console.error(`❌ Erro: A skill '${sName}' não foi encontrada no repositório.`);
             }
-            
-            fs.cpSync(sourcePath, targetDir, { recursive: true });
-            console.log(`✅ Sucesso! Skill instalada em: .agent/skills/${skillName}`);
-        } else {
-            console.error(`❌ Erro: A skill '${skillName}' não foi encontrada no repositório.`);
         }
 
         // Cleanup
@@ -49,6 +55,7 @@ if (cmd === 'add' && skillName) {
 Uso: npx github:williamdevide/antigravity-wdk-skills add <nome-da-skill>
 
 Skills disponíveis:
+- all (instala todas as skills abaixo)
 - criador-slidehtml
 - criar-readme
 - criar-bat

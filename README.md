@@ -20,6 +20,11 @@ npx github:williamdevide/antigravity-wdk-skills add criador-slidehtml
 
 Este comando criará automaticamente a pasta `.agent/skills/<nome-da-skill>` em seu projeto atual.
 
+Para instalar **todas as skills** de uma vez, utilize:
+```bash
+npx github:williamdevide/antigravity-wdk-skills add all
+```
+
 ## 📚 Skills Disponíveis
 
 | Skill | Descrição | Comando de Instalação |
