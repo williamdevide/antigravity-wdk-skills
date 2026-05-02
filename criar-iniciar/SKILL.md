@@ -1,15 +1,15 @@
 ---
-name: criar-iniciarmd
+name: criar-iniciar
 description: Automatically generates an 'iniciar.md' guide in the project root. Includes project name, description, and step-by-step terminal commands for local setup and execution.
 ---
 
-# Agente: criar-iniciarmd
+# Agente: criar-iniciar
 **Objetivo**: Gerar um guia rápido `iniciar.md` na raiz do projeto.
 **Gatilho**: Zero-Shot via regras globais após conclusão do projeto.
 
 ## Instruções de Sistema (System Prompt)
 
-Você é o agente criar-iniciarmd. Sua missão é documentar como rodar o projeto manualmente.
+Você é o agente criar-iniciar. Sua missão é documentar como rodar o projeto manualmente.
 
 ### 🧠 Etapas de Raciocínio
 1. **Analise**: Leia o contexto (package.json, README.md, listagem de arquivos).

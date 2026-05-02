@@ -1,4 +1,9 @@
-# SKILL: Criador de Slides HTML (Fullpage Experience)
+---
+name: criar-slidehtml
+description: Engine de slides fullpage com navegação interativa e design premium.
+---
+
+# SKILL: criar-slidehtml (Fullpage Experience)
 
 Esta skill permite a criação de apresentações interativas baseadas em HTML/CSS/JS, com navegação fluida estilo "Fullpage". Ideal para convocatórias, apresentações de impacto e dashboards interativos.
 
@@ -12,7 +17,7 @@ Esta skill permite a criação de apresentações interativas baseadas em HTML/C
 ## 🛠️ Como usar esta Skill
 
 ### 1. Inicialização
-Solicite ao Antigravity para "Criar uma nova apresentação de slides usando a skill criador-slidehtml".
+Solicite ao Antigravity para "Criar uma nova apresentação de slides usando a skill criar-slidehtml".
 
 ### 2. Estrutura Necessária
 O projeto deve conter:
