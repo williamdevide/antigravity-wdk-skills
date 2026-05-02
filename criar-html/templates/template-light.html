@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Premium Light - SENAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-light.css">
+</head>
+
+<body>
+
+    <img src="assets/logo.png" alt="Logo" class="logo-top-right">
+
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="slides-container" id="slides-container">
+
+        <!-- 1. Slide Capa -->
+        <div class="slide cover">
+            <div class="slide-content">
+                <h2>Apresentação <span class="highlight">Profissional</span></h2>
+                <p>Template Premium Light para Engajamento e Performance</p>
+            </div>
+        </div>
+
+        <!-- 2. Slide Tema (Inspirado no 1-ano.html) -->
+        <div class="slide">
+            <div class="theme-bar top" style="background-color: var(--senai-gray-light);"></div>
+            <div class="slide-content">
+                <h3 style="font-size: 1.5rem; letter-spacing: 5px; color: var(--senai-red);">Módulo Especial</h3>
+                <h2 style="font-size: 5.5rem;">Grande Tema do Projeto</h2>
+                <p>Exploração aprofundada dos pilares de sustentabilidade e IA.</p>
+            </div>
+            <div class="theme-bar bottom" style="background-color: var(--senai-gray-light);"></div>
+        </div>
+
+        <!-- 3. Slide Vazio -->
+        <div class="slide empty">
+            <div class="slide-content">
+                <p style="color: #ccc;">[Slide Vazio]</p>
+            </div>
+        </div>
+
+        <!-- 4. Slide de Título -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Este é um Slide de Título</h2>
+            </div>
+        </div>
+
+        <!-- 5. Slide com Autor -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Apresentado por:</h2>
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--senai-red); font-size: 3rem; margin-bottom: 0.5rem;">William Devide</h3>
+                    <p>Especialista em Desenvolvimento WDK</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Layout: Imagem à Direita -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="layout-grid image-right">
+                    <div>
+                        <h2>Foco no Conteúdo</h2>
+                        <p>Descrição lateral que permite integrar texto e uma imagem de destaque em perfeita harmonia.
+                        </p>
+                    </div>
+                    <img src="assets/bg-code.png" alt="Tech" class="slide-image reveal-item">
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Layout: Imagem à Esquerda -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="layout-grid image-left">
+                    <img src="assets/bg-team.png" alt="Team" class="slide-image reveal-item">
+                    <div>
+                        <h2>Análise Técnica</h2>
+                        <p>Invertendo a posição para manter o dinamismo visual ao longo da apresentação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Layout: Imagem Acima (ou com fundo) -->
+        <div class="slide has-bg" style="background-image: url('assets/strip-top.png');">
+            <div class="slide-content">
+                <h2>Imagem de Fundo</h2>
+                <p>Exemplo de slide com imagem de fundo e overlay claro para garantir legibilidade máxima.</p>
+            </div>
+        </div>
+
+        <!-- 9. Slide Cabeçalho de Seção -->
+        <div class="slide section-header">
+            <div class="slide-content">
+                <h2>Seção 02</h2>
+                <p style="font-weight: 700; color: var(--senai-black); text-transform: uppercase;">Aprofundamento</p>
+            </div>
+        </div>
+
+        <!-- 10. Slide Comparação -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Análise de Cenários</h2>
+                <div class="comparison-container">
+                    <div class="comp-box left">
+                        <h3>Cenário A</h3>
+                        <p>Baixo investimento inicial, porém custos de manutenção elevados a longo prazo.</p>
+                    </div>
+                    <div class="comp-box right">
+                        <h3 style="color: var(--senai-red);">Cenário B</h3>
+                        <p>Investimento estratégico em automação com retorno rápido e estabilidade operacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Infográfico: Timeline Linear -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Linha do Tempo</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-step">
+                        <div class="step-dot">01</div>
+                        <h4>Fase 01</h4>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot">02</div>
+                        <h4>Fase 02</h4>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot">03</div>
+                        <h4>Fase 03</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. Infográfico: Cronograma (Box com Linha) -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Cronograma de Entregas</h2>
+                <div class="timeline-group">
+                    <h2 class="timeline-label">SET</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">10</div>
+                            <div class="timeline-content">
+                                <h4>Design</h4>
+                                <p>Protótipo</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">15</div>
+                            <div class="timeline-content">
+                                <h4>Dev</h4>
+                                <p>Frontend</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">25</div>
+                            <div class="timeline-content">
+                                <h4>QA</h4>
+                                <p>Testes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. Infográfico: Fluxo com Setas -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Processo Industrial</h2>
+                <div class="arrow-boxes" style="margin-top: 4rem;">
+                    <div class="box-item">Coleta</div>
+                    <div class="arrow-icon">&#10142;</div>
+                    <div class="box-item">Análise IA</div>
+                    <div class="arrow-icon">&#10142;</div>
+                    <div class="box-item">Otimização</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. Slide: Imagem Superior (Faixa) -->
+        <div class="slide layout-strip-top">
+            <img src="assets/strip-top.png" alt="Código" class="strip-image-top reveal-item">
+            <div class="slide-content">
+                <h2 class="reveal-item">Visão Estratégica</h2>
+                <p class="reveal-item">Layout com faixa de imagem superior ocupando toda a largura.</p>
+            </div>
+        </div>
+
+        <!-- 15. Slide: Imagem Inferior (Faixa) -->
+        <div class="slide layout-strip-bottom">
+            <div class="slide-content">
+                <h2 class="reveal-item">Fundação Sólida</h2>
+                <p class="reveal-item">Layout com faixa de imagem inferior ocupando toda a largura do slide.</p>
+            </div>
+            <img src="assets/strip-bottom.png" alt="Equipe" class="strip-image-bottom reveal-item">
+        </div>
+
+        <!-- 16. Slide: Sequência Vertical (Slide 16 Ref) -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="reveal-item">Plano de Ação</h2>
+                <div class="vertical-steps">
+                    <div class="step-item reveal-item">
+                        <div class="step-number">01</div>
+                        <div class="step-info">
+                            <h4>Pesquisa</h4>
+                            <p>Levantamento de dados e análise de mercado.</p>
+                        </div>
+                    </div>
+                    <div class="step-item reveal-item">
+                        <div class="step-number">02</div>
+                        <div class="step-info">
+                            <h4>Design</h4>
+                            <p>Criação da identidade e interface do usuário.</p>
+                        </div>
+                    </div>
+                    <div class="step-item reveal-item">
+                        <div class="step-number">03</div>
+                        <div class="step-info">
+                            <h4>Lançamento</h4>
+                            <p>Deploy e monitoramento de resultados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 17. Slide Finalização -->
+        <div class="slide cover" style="background-color: var(--senai-black);">
+            <div class="slide-content">
+                <h2 style="color: var(--senai-white);">Obrigado!</h2>
+                <p style="color: #888;">Vamos transformar a indústria juntos.</p>
+                <div style="margin-top: 4rem;">
+                    <p style="color: var(--senai-red); font-weight: 700; font-size: 2.5rem;">www.senai.br</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <span class="slide-counter" id="slide-counter">1 / 16</span>
+        <button class="btn-nav" id="btn-prev" disabled title="Duplo clique: Início">&#8592;</button>
+        <button class="btn-nav btn-pulse" id="btn-next" title="Duplo clique: Fim">&#8594;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,586 @@
+:root {
+    --senai-red: #E3000F;
+    --senai-red-dark: #cc000e;
+    --senai-white: #FFFFFF;
+    --senai-ice: #F8F9FA;
+    --senai-gray-light: #E9ECEF;
+    --senai-gray: #666666;
+    --senai-black: #111111;
+    --font-main: 'Inter', sans-serif;
+    --transition-speed: 0.8s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--senai-ice);
+    color: var(--senai-black);
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+/* --- LOGO --- */
+.logo-top-right {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    height: 45px;
+    width: auto;
+}
+
+/* --- PROGRESS BAR --- */
+.progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--senai-gray-light);
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--senai-red);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* --- SLIDES CONTAINER --- */
+.slides-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    transition: transform var(--transition-speed) cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 10%;
+    position: relative;
+    text-align: center;
+    background-color: var(--senai-white);
+}
+
+.slide-content {
+    max-width: 1100px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    z-index: 2;
+}
+
+.slide.active .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.slide h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: var(--senai-black);
+}
+
+.slide.cover h2 {
+    font-size: 7rem;
+    color: var(--senai-black);
+}
+
+.slide.cover .highlight {
+    color: var(--senai-red);
+}
+
+.slide p {
+    font-size: 2.2rem;
+    color: var(--senai-gray);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.section-header h2 {
+    font-size: 6rem;
+    color: var(--senai-red);
+    border-bottom: 12px solid var(--senai-red);
+    padding-bottom: 2rem;
+    display: inline-block;
+}
+
+/* --- FLEXIBLE LAYOUTS --- */
+.layout-grid {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+.image-right { grid-template-columns: 1.2fr 0.8fr; }
+.image-left { grid-template-columns: 0.8fr 1.2fr; }
+.image-top { grid-template-columns: 1fr; text-align: center; }
+.image-bottom { grid-template-columns: 1fr; text-align: center; }
+
+.slide-image {
+    width: 100%;
+    height: auto;
+    max-height: 55vh;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.layout-image-top {
+    flex-direction: column-reverse;
+}
+
+.layout-image-top .slide-image {
+    margin-bottom: 3rem;
+    order: 1;
+}
+
+.layout-image-top h2 {
+    order: 2;
+}
+
+.layout-image-bottom {
+    flex-direction: column;
+}
+
+.layout-image-bottom .slide-image {
+    margin-top: 3rem;
+}
+
+/* --- STRIP LAYOUTS (Faixas de fora a fora) --- */
+.layout-strip-top {
+    padding-top: 0 !important;
+}
+
+.strip-image-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.layout-strip-bottom {
+    padding-bottom: 0 !important;
+}
+
+.strip-image-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Background Image with Light Overlay */
+.slide.has-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 249, 250, 0.9); /* Light Overlay (Ice) */
+    z-index: 1;
+}
+
+/* Theme Bars */
+.theme-bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 18vh;
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+    opacity: 0.8;
+}
+.theme-bar.top { top: 0; border-bottom: 8px solid var(--senai-red); }
+.theme-bar.bottom { bottom: 0; border-top: 8px solid var(--senai-red); }
+
+/* --- CARDS & COMPARISON --- */
+.card-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.card {
+    background: var(--senai-white);
+    border: 1px solid var(--senai-gray-light);
+    padding: 3rem;
+    border-radius: 20px;
+    flex: 1;
+    text-align: left;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(227, 0, 15, 0.1);
+    border-color: var(--senai-red);
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: var(--senai-red);
+    margin-bottom: 1.5rem;
+}
+
+.card p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.comparison-container {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.1);
+}
+
+.comp-box {
+    flex: 1;
+    padding: 4rem;
+}
+
+.comp-box h3 { font-size: 2.5rem; margin-bottom: 2rem; }
+.comp-box p { font-size: 1.8rem; }
+.comp-box.left { background: var(--senai-ice); border-right: 4px solid var(--senai-white); }
+.comp-box.right { background: var(--senai-white); }
+
+/* --- INFOGRAPHICS --- */
+
+/* Timeline Group (Reused from Slide 16 base) */
+.timeline-group {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    width: 100%;
+    text-align: left;
+}
+
+.timeline-label {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--senai-red);
+    min-width: 180px;
+    text-align: right;
+}
+
+.timeline {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 3rem;
+    right: 3rem;
+    height: 3px;
+    background: var(--senai-red);
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.timeline-dot {
+    width: 60px;
+    height: 60px;
+    background: var(--senai-red);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    color: white;
+    border: 5px solid var(--senai-white);
+    font-size: 1.5rem;
+}
+
+.timeline-content h4 {
+    color: var(--senai-red);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 1.4rem !important;
+    margin-bottom: 0;
+}
+
+/* Linear Timeline */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 6rem;
+    width: 100%;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background: var(--senai-gray-light);
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-dot {
+    width: 65px;
+    height: 65px;
+    background: var(--senai-red);
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    border: 5px solid var(--senai-white);
+    box-shadow: 0 0 30px rgba(227, 0, 15, 0.3);
+    font-size: 1.5rem;
+}
+
+.timeline-step h4 { font-size: 1.6rem; color: var(--senai-black); }
+
+.arrow-icon {
+    font-size: 3rem;
+    color: var(--senai-red);
+}
+
+/* --- ARROW BOXES (Restaurado) --- */
+.arrow-boxes {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.box-item {
+    background: var(--senai-white);
+    border: 3px solid var(--senai-red);
+    padding: 2.5rem;
+    border-radius: 15px;
+    flex: 1;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* --- VERTICAL STEPS (Slide 16 Ref) --- */
+.vertical-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: var(--senai-white);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border-left: 8px solid var(--senai-red);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateX(10px);
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--senai-red);
+    opacity: 0.3;
+    min-width: 60px;
+}
+
+.step-info h4 {
+    font-size: 1.4rem;
+    color: var(--senai-black);
+    margin-bottom: 0.2rem;
+}
+
+.step-info p {
+    font-size: 1.1rem !important;
+    color: var(--senai-gray);
+    margin-bottom: 0 !important;
+}
+
+/* --- CONTROLS --- */
+.controls {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.slide-counter {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--senai-gray);
+}
+
+.btn-nav {
+    background: var(--senai-red);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    transform: scale(1.1);
+    background: var(--senai-red-dark);
+}
+
+.btn-nav:disabled {
+    background: var(--senai-gray-light);
+    color: var(--senai-gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- ANIMATIONS & REVEALS --- */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.slide.active .reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Delays */
+.slide.active .reveal-item:nth-child(1) { transition-delay: 0.1s; }
+.slide.active .reveal-item:nth-child(2) { transition-delay: 0.2s; }
+.slide.active .reveal-item:nth-child(3) { transition-delay: 0.3s; }
+.slide.active .reveal-item:nth-child(4) { transition-delay: 0.4s; }
+.slide.active .reveal-item:nth-child(5) { transition-delay: 0.5s; }
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(227, 0, 15, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(227, 0, 15, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(227, 0, 15, 0); }
+}
+
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* --- MEDIA QUERIES (Mobile Optimized) --- */
+@media (max-width: 1024px) {
+    .slide h2 { font-size: 3.5rem; }
+    .slide.cover h2 { font-size: 5rem; }
+    .card-container { gap: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    body { overflow-y: auto; } /* Allow scroll on mobile if content overflows */
+    .slide { 
+        height: auto; 
+        min-height: 100vh; 
+        padding: 5rem 5%; 
+    }
+    .slides-container {
+        height: auto;
+        transform: none !important;
+    }
+    .slide h2 { font-size: 2.5rem; }
+    .slide.cover h2 { font-size: 3.5rem; }
+    .slide p { font-size: 1.2rem; }
+    .card-container { flex-direction: column; }
+    .comparison-container { flex-direction: column; }
+    .comp-box.left { border-right: none; border-bottom: 4px solid var(--senai-white); }
+    .arrow-boxes { flex-direction: column; }
+    .arrow-icon { transform: rotate(90deg); }
+    .controls { 
+        bottom: 1rem; 
+        right: 1rem; 
+        padding: 0.5rem 1rem;
+    }
+    .btn-nav { width: 40px; height: 40px; }
+    .logo-top-right { height: 35px; top: 1rem; right: 1rem; }
+    .step-item { flex-direction: column; text-align: center; gap: 0.5rem; }
+    .step-number { min-width: auto; }
+}

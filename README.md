@@ -30,7 +30,7 @@ npx github:williamdevide/antigravity-wdk-skills add all
 
 | Skill | Descrição | Comando |
 | :--- | :--- | :--- |
-| **criar-html** | Motor de apresentações interativas com UX fluida e design premium. | `add criar-html` |
+| **criar-html** | Motor 2.0 de apresentações interativas com 17 layouts, temas Dark/Light/SENAI e inteligência de layout. | `add criar-html` |
 | **criar-readme** | Gerador de documentação vitrine bilíngue (PT-BR/EN) de alto impacto. | `add criar-readme` |
 | **criar-bat** | Script inteligente de execução local com resolução de conflitos. | `add criar-bat` |
 | **criar-iniciar** | Guia técnico de onboarding com instruções de terminal e FAQ. | `add criar-iniciar` |
@@ -57,7 +57,7 @@ npx github:williamdevide/antigravity-wdk-skills add all
 
 | Skill | Description | Install Command |
 | :--- | :--- | :--- |
-| **criar-html** | Interactive presentation engine with fluid UX and premium design. | `add criar-html` |
+| **criar-html** | 2.0 Presentation engine with 17 layouts, Dark/Light/SENAI themes, and intelligent layout mapping. | `add criar-html` |
 | **criar-readme** | High-impact bilingual (PT-BR/EN) showcase documentation generator. | `add criar-readme` |
 | **criar-bat** | Intelligent local execution script with conflict resolution. | `add criar-bat` |
 | **criar-iniciar** | Technical onboarding guide with terminal instructions and FAQ. | `add criar-iniciar` |

@@ -1,59 +1,56 @@
 ---
 name: criar-html
-description: Advanced skill for creating premium interactive HTML5 presentations. Focuses on immersive UX, high-end aesthetics (Dark/Light), and full navigation control.
+description: Motor avançado de apresentações interativas HTML5. Focado em UX imersiva, inteligência de layout e paridade estética entre temas Light, Dark e SENAI.
 ---
 
 # SKILL: CriarHTML (Premium Presentation Engine)
 
-Esta skill transforma conteúdos em apresentações digitais de alto impacto, utilizando as melhores práticas de design de 2026. O motor é focado em uma experiência "Fullpage" fluida, com suporte total a interações modernas.
+Esta skill transforma textos brutos ou prompts criativos em apresentações digitais de alto impacto. O motor utiliza uma arquitetura de 17 layouts padronizados e inteligência artificial para mapear o conteúdo ao melhor design visual.
 
-## 🛑 SOCRATIC GATE (Obrigatório)
-Antes de iniciar qualquer código, você **DEVE** questionar o usuário sobre:
-1. **Estética**: Prefere uma abordagem **Light** (limpa/corporativa) ou **Dark** (premium/tecnológica)?
-2. **Imagens**: Devemos utilizar imagens de fundo e assets visuais imersivos?
-3. **Infográficos**: Deseja a criação de infográficos visuais para representar dados/processos quando possível?
-4. **Logotipos**: Há logotipos específicos ou marcas que devem ser integrados ao design?
+## 🛑 PROTOCOLO SOCRÁTICO (Obrigatório)
+Sempre que receber uma solicitação de criação de slides, você **DEVE** parar e perguntar:
+1. **Tema Desejado**: Escolha entre **Light** (Clean/Corporativo), **Dark** (Premium/Neon) ou **SENAI** (Institucional).
+2. **Identidade Visual**: 
+   - Se for tema **SENAI**, o logotipo padrão já está integrado.
+   - Se for **Light** ou **Dark**, qual é o logotipo ou marca que deve ser utilizado? (Gere um via IA se o usuário não fornecer).
 
-## 🚀 Funcionalidades de Elite
-- **Navegação Avançada**:
-    - Botões flutuantes e fixos para `Anterior` e `Próximo`.
-    - **Navegação Rápida**: Clique duplo nos botões de navegação para saltar para o `Primeiro` ou `Último` slide.
-    - Suporte nativo a `Teclado` (Setas/Espaço), `Scroll` (Mouse Wheel) e `Touch`.
-- **Design System Premium**:
-    - **Tipografia**: Uso obrigatório da fonte **Inter** (ou 'Outfit' como alternativa).
-    - **Efeitos**: Glassmorphism (backdrop-filter), Gradientes dinâmicos e overlays de leitura.
-    - **Feedback Visual**: Barra de progresso superior e contador de slides (`X / Total`).
-    - **Animações**: Micro-animações de entrada (FadeInUp) sincronizadas com a ativação do slide.
+## 🧠 INTELIGÊNCIA DE LAYOUT
+Você deve analisar o conteúdo de cada slide e selecionar automaticamente o melhor layout entre os 17 disponíveis:
 
-## 🛠️ Especificações Técnicas
+| ID | Nome do Layout | Melhor Uso |
+|:---|:---|:---|
+| 01 | **Cover** | Título principal e subtítulo de impacto. |
+| 02 | **Big Theme** | Introdução de módulos com barras decorativas. |
+| 03 | **Empty** | Conteúdo livre ou muito específico. |
+| 04 | **Title Only** | Frases curtas de grande impacto. |
+| 05 | **Author / Bio** | Apresentação de palestrantes ou responsáveis. |
+| 06 | **Card Grid** | Listas de pilares, valores ou 2-3 itens curtos. |
+| 07 | **Grid Image Right** | Texto explicativo com imagem de apoio à direita. |
+| 08 | **Grid Image Left** | Imagem de destaque à esquerda com texto à direita. |
+| 09 | **Full Background** | Slides imersivos com imagem de fundo e overlay. |
+| 10 | **Section Header** | Divisor minimalista de capítulos/seções. |
+| 11 | **Comparison** | Análise de cenários (Antes vs. Depois, A vs. B). |
+| 12 | **Timeline Dots** | Evolução linear simples com pontos de progresso. |
+| 13 | **Cronograma** | Lista detalhada de datas ou marcos com pontos. |
+| 14 | **Process Arrows** | Fluxogramas e etapas sequenciais com setas. |
+| 15 | **Strip Top** | Destaque visual panorâmico no topo do slide. |
+| 16 | **Strip Bottom** | Destaque visual panorâmico na base do slide. |
+| 17 | **Vertical Steps** | Lista numerada vertical para planos de ação. |
 
-### 1. Estrutura de Navegação (HTML)
-```html
-<div class="slides-container" id="slides-container">
-    <section class="slide active"> <!-- Conteúdo --> </section>
-    <section class="slide"> <!-- Conteúdo --> </section>
-</div>
+## 🖼️ GESTÃO DE ATIVOS (Assets)
+- **Obrigatoriedade**: Todo projeto gerado **DEVE** possuir uma subpasta `assets/` contendo todas as imagens.
+- **Geração de Imagens**: Utilize sempre a melhor IA disponível (`generate_image`) para criar imagens de alta fidelidade (4K/8K) que combinem com a estética escolhida.
+- **Logotipos**: Se um logotipo não for fornecido, gere um minimalist/tech que combine com o tema.
 
-<div class="controls">
-    <span class="slide-counter" id="slide-counter">1 / X</span>
-    <button class="btn-nav" id="btn-prev" disabled>&#8592;</button>
-    <button class="btn-nav" id="btn-next">&#8594;</button>
-</div>
-```
-
-### 2. Estética e CSS
-- Use variáveis CSS para `--theme-primary` (ex: Vermelho SENAI `#E3000F`) e cores de fundo.
-- Aplique `overflow: hidden` no body para garantir o efeito Fullpage.
-- Seções devem ter `height: 100vh` e transições de `transform 0.8s cubic-bezier(0.85, 0, 0.15, 1)`.
-
-### 3. Lógica de Interação (JS)
-- Implemente um `updateUI()` que gerencia classes `.active`, atualiza a largura da `progress-bar` e o texto do `slide-counter`.
-- Bloqueie interações rápidas demais com um `isAnimating` lock (aprox. 600ms).
-
-## 🎨 Design Guidelines (Premium Only)
-- **Contrastes**: Sempre garanta acessibilidade (WCAG) usando overlays escuros sobre imagens de fundo.
-- **Cards**: Use bordas arredondadas generosas (20px) e efeitos de hover que escalonam levemente o conteúdo.
-- **Imagens**: Priorize imagens de alta qualidade que ocupem todo o fundo (`background-size: cover`).
+## 🛠️ ESPECIFICAÇÕES TÉCNICAS (Padrão 2026)
+- **Navegação**: 
+  - Suporte a Teclado, Scroll, Touch e Cliques.
+  - **Jumping**: Clique duplo nos botões de navegação para saltar para o Início/Fim.
+- **CSS Imersivo**:
+  - `overflow: hidden` no body para efeito fullpage.
+  - Variáveis de cor centralizadas para fácil troca de temas.
+  - Micro-animações `FadeInUp` ativadas via classe `.active`.
+- **Responsividade**: Layouts devem fluir verticalmente em dispositivos móveis (`@media max-width: 768px`).
 
 ---
 **Antigravity WDK Skills** | *Next-Gen Digital Experience*

@@ -1,0 +1,90 @@
+/* Import styles from light theme */
+@import url('style-light.css');
+
+/* Specific SENAI Template Elements */
+
+/* DOT PATTERNS */
+.slide:not(.cover):not(.final) .dots-top-right {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.slide:not(.cover):not(.final) .dots-bottom-left {
+    position: absolute;
+    bottom: 4rem;
+    left: 2rem;
+    width: 300px;
+    height: 150px;
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* RED BOTTOM BAR */
+.slide:not(.cover):not(.final) .senai-bar-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-color: var(--senai-red);
+    z-index: 10;
+}
+
+/* SENAI LOGO OVERRIDE */
+.slide:not(.cover):not(.final) .logo-top-right {
+    height: 60px;
+    top: 3rem;
+    right: 4rem;
+}
+
+/* COVER/FINAL SLIDE FULLSCREEN IMAGES */
+.slide.cover, .slide.final {
+    padding: 0;
+}
+
+.slide.cover img.full-bg, .slide.final img.full-bg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slide.cover::after, .slide.final::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    z-index: 2;
+}
+
+/* Font Adjustments for SENAI Template */
+.slide:not(.cover):not(.final) .slide-content {
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.slide h2 {
+    letter-spacing: -0.04em;
+    color: var(--senai-black);
+}
+
+.slide.cover h2, .slide.final h2 {
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 3;
+}

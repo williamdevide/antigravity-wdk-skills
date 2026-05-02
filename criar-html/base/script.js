@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateUI() {
-        // Move the container (Vertical transition)
+        // Move the container
         slidesContainer.style.transform = `translateY(-${currentSlide * 100}vh)`;
         
         // Update active class for animations
@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Lock animation
+        // Unlock animation lock
         setTimeout(() => {
             isAnimating = false;
-        }, 800); // matches CSS var --transition-speed
+        }, 600); // matches CSS transition duration
     }
 
     function goNext() {
@@ -116,16 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
             e.preventDefault();
             goPrev();
-        } else if (e.key === 'Home') {
-            goFirst();
-        } else if (e.key === 'End') {
-            goLast();
         }
     });
 
-    // Mouse Wheel Navigation
+    // Mouse Wheel Navigation (with debounce/lock)
     document.addEventListener('wheel', (e) => {
         if (isAnimating) return;
+        
         if (e.deltaY > 50) {
             goNext();
         } else if (e.deltaY < -50) {
