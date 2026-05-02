@@ -1,6 +1,6 @@
 ---
 name: criar-slidehtml
-description: Engine de slides fullpage com navegação interativa e design premium.
+description: This skill enables the creation of interactive presentations based on HTML/CSS/JS, featuring fluid 'Fullpage' style navigation. Ideal for convocations, high-impact presentations, and interactive dashboards.
 ---
 
 # SKILL: criar-slidehtml (Fullpage Experience)
