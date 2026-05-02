@@ -1,62 +1,83 @@
 ---
 name: criar-readme
-description: Automatically generates a modern, bilingual (PT-BR/EN) README.md. Focuses on visual appeal with badges, clear sections, and professional formatting.
+description: Generates high-impact, bilingual (PT-BR/EN) README.md documentation. Includes architecture, badges, tech stack, and contribution guides.
 ---
 
-# Agente: criar-readme
-**Objetivo**: Gerar um `README.md` de alta qualidade, bilingue e visualmente atraente.
-**Gatilho**: Zero-Shot via regras globais após conclusão do projeto.
+# SKILL: CriarReadme (Project Showcase Pro)
 
-## Instruções de Sistema (System Prompt)
+O `README.md` é o cartão de visitas de qualquer repositório. Esta skill garante que seu projeto seja apresentado com profissionalismo, clareza e impacto visual imediato.
 
-Você é o agente criar-readme. Sua missão é criar a vitrine do projeto.
+## 🎯 Objetivo
+Criar uma documentação que não apenas informe, mas "venda" a qualidade do código e da solução para outros desenvolvedores e stakeholders.
 
-### 🧠 Etapas de Raciocínio
-1. **Analise**: Leia o contexto completo do projeto (código, funcionalidades, stack).
-2. **Tradução**: Gere todo o conteúdo primeiro em **Português do Brasil** e depois em **Inglês**.
-3. **Estilização**: Use Badges (shields.io), Emojis e seções bem divididas.
-4. **Gere**: Crie o arquivo `README.md` na raiz.
+## 🚀 Diferenciais da Skill
+- **Bilinguismo Nativo**: Suporte completo a Português (Brasil) e Inglês.
+- **Visual Moderno**: Uso estratégico de badges, emojis e separadores.
+- **Arquitetura**: Seção dedicada para explicar a organização do projeto.
+- **SEO Ready**: Estrutura otimizada para motores de busca e indexação do GitHub.
 
-### 📝 Estrutura do README.md
+## 🛠️ Diretrizes de Conteúdo
+1. **Header**: Nome impactante e tagline clara.
+2. **Badges**: Status, Licença, Stack, Versão.
+3. **Descrição**: Texto conciso explicando o "porquê" do projeto.
+4. **Stack**: Lista organizada de tecnologias principais.
+5. **Estrutura**: Mapa rápido de pastas e responsabilidades.
 
+## 📝 Estrutura do Template Master
+
+```markdown
 # {{NOME_PROJETO}}
 
-> {{BILINGUAL_TAGLINE}}
+> {{TAGLINE_PT}}
+> {{TAGLINE_EN}}
 
-![Badge](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
-![Badge](https://img.shields.io/badge/Stack-{{STACK}}-blue)
+![Status](https://img.shields.io/badge/Status-Estável-brightgreen)
+![Node](https://img.shields.io/badge/Stack-Modern-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+---
 
 ## 🇧🇷 Português
 
-### 📝 Descrição
-{{DESCRICAO_PT}}
+### 📝 Sobre o Projeto
+{{DESCRICAO_DETALHADA_PT}}
 
-### 🚀 Funcionalidades
-- {{FEATURE_1_PT}}
-- {{FEATURE_2_PT}}
+### 🛠️ Tecnologias Utilizadas
+- **Core**: {{TECH_CORE}}
+- **UI/UX**: {{TECH_UI}}
+- **Tools**: {{TECH_TOOLS}}
 
-### 🛠️ Tecnologias
-- {{TECH_LIST}}
+### 📂 Estrutura de Pastas
+```text
+src/
+├── components/   # Componentes reutilizáveis
+├── logic/        # Regras de negócio
+└── assets/       # Imagens e estilos
+```
 
 ---
 
 ## 🇺🇸 English
 
-### 📝 Description
-{{DESCRICAO_EN}}
-
-### 🚀 Features
-- {{FEATURE_1_EN}}
-- {{FEATURE_2_EN}}
+### 📝 About the Project
+{{DESCRICAO_DETALHADA_EN}}
 
 ### 🛠️ Technologies
-- {{TECH_LIST}}
+- **Core**: {{TECH_CORE}}
+- **UI/UX**: {{TECH_UI}}
+- **Tools**: {{TECH_TOOLS}}
 
 ---
 
-## 🏁 Como Iniciar / How to Start
-Consulte o arquivo [iniciar.md](./iniciar.md) para instruções detalhadas.
-Refer to [iniciar.md](./iniciar.md) for detailed instructions.
+## 🚀 Como Iniciar / How to Start
+Para instruções detalhadas de configuração local, consulte:
+For detailed local setup instructions, please refer to:
+
+👉 **[iniciar.md](./iniciar.md)**
 
 ---
-*Gerado com ❤️ por criar-readme.*
+**WDK Professional Series** | *Criado com ❤️ por William Devide*
+```
+
+---
+**WDK Professional Series** | *Branding & Documentação*

@@ -24,7 +24,7 @@ if (cmd === 'add' && skillName) {
         // Clone minimal
         execSync(`git clone --depth 1 ${repoUrl} ${tempDir}`, { stdio: 'ignore' });
 
-        const availableSkills = ['criador-slidehtml', 'criar-readme', 'criar-bat', 'criar-iniciarmd'];
+        const availableSkills = ['criar-html', 'criar-readme', 'criar-bat', 'criar-iniciar'];
         const skillsToInstall = skillName === 'all' ? availableSkills : [skillName];
 
         for (const sName of skillsToInstall) {
@@ -56,9 +56,9 @@ Uso: npx github:williamdevide/antigravity-wdk-skills add <nome-da-skill>
 
 Skills disponíveis:
 - all (instala todas as skills abaixo)
-- criador-slidehtml
+- criar-html
 - criar-readme
 - criar-bat
-- criar-iniciarmd
+- criar-iniciar
     `);
 }

@@ -1,49 +1,78 @@
 ---
 name: criar-iniciar
-description: Automatically generates an 'iniciar.md' guide in the project root. Includes project name, description, and step-by-step terminal commands for local setup and execution.
+description: Generates a detailed and professional technical 'iniciar.md' guide. Focused on streamlining developer onboarding with clear setup instructions and troubleshooting.
 ---
 
-# Agente: criar-iniciar
-**Objetivo**: Gerar um guia rápido `iniciar.md` na raiz do projeto.
-**Gatilho**: Zero-Shot via regras globais após conclusão do projeto.
+# SKILL: CriarIniciar (Technical Guide Pro)
 
-## Instruções de Sistema (System Prompt)
+Esta skill gera o arquivo `iniciar.md`, que serve como o mapa de execução técnica do projeto. Diferente do README, este arquivo é estritamente focado em comandos, ambiente e resolução de problemas.
 
-Você é o agente criar-iniciar. Sua missão é documentar como rodar o projeto manualmente.
+## 🎯 Objetivo
+Eliminar a fricção no primeiro contato de um desenvolvedor com o código, garantindo que o setup inicial seja feito em menos de 2 minutos.
 
-### 🧠 Etapas de Raciocínio
-1. **Analise**: Leia o contexto (package.json, README.md, listagem de arquivos).
-2. **Identifique**:
-   - `NOME`: Nome do projeto.
-   - `DESC`: Breve descrição.
-   - `STACK`: Node/React, Python, ou outra detectada.
-   - `COMMANDS`: Sequência exata de comandos para instalar e rodar.
-3. **Gere**: Crie o arquivo `iniciar.md` na raiz com o template abaixo.
+## 🚀 Estrutura do Guia
+1. **Ambiente**: Especifica versões recomendadas de runtime.
+2. **Setup**: Comandos de instalação limpos e comentados.
+3. **Execução**: Como subir o ambiente de desenvolvimento e produção.
+4. **Resolução de Problemas**: Dicas rápidas para erros comuns de instalação.
 
-### 📝 Template iniciar.md
+## 🛠️ Instruções de Geração
+O Agente deve:
+- Detectar automaticamente se o projeto usa `npm`, `yarn`, `pnpm` ou `pip`.
+- Listar variáveis de ambiente necessárias (ex: `.env.example`).
+- Incluir dicas de performance para o ambiente local.
 
-# {{NOME}}
-{{DESC}}
+## 📝 Template de Referência
 
-## 🚀 Como Rodar Localmente
+```markdown
+# 🚀 Guia de Inicialização - {{NOME}}
 
-### Pré-requisitos
-- {{STACK_RUNTIME_REQ}} (ex: Node.js 18+, Python 3.10+)
+Este guia contém as instruções técnicas para configurar e executar o projeto em seu ambiente local.
 
-### Passo a Passo via Terminal
+## 📋 Pré-requisitos
 
-1. **Instalar Dependências**
-   ```bash
-   {{INSTALL_COMMAND}}
-   ```
+Antes de começar, certifique-se de ter instalado:
+- **Runtime**: {{STACK_VERSION}} (ex: Node.js 20+ ou Python 3.11+)
+- **Gerenciador**: {{MANAGER}} (ex: npm, yarn, pip)
+- **Git**: Para clonagem e controle de versão.
 
-2. **Configurar Ambiente (Opcional)**
-   - Crie o arquivo `.env` se necessário.
+## 🛠️ Passo a Passo
 
-3. **Executar o Projeto**
-   ```bash
-   {{RUN_COMMAND}}
-   ```
+### 1. Preparação do Ambiente
+```bash
+# Clone o repositório (se ainda não o fez)
+git clone <url-do-repo>
+
+# Entre na pasta
+cd {{FOLDER_NAME}}
+```
+
+### 2. Instalação de Dependências
+```bash
+{{INSTALL_COMMAND}}
+```
+
+### 3. Configuração de Variáveis (Opcional)
+Se houver um arquivo `.env.example`, crie sua cópia:
+```bash
+cp .env.example .env
+# Edite as chaves conforme necessário
+```
+
+### 4. Execução
+```bash
+{{RUN_COMMAND}}
+```
+
+## 🔍 Troubleshooting (FAQ)
+
+- **Erro de Versão**: Certifique-se de que o runtime instalado é compatível com o listado nos pré-requisitos.
+- **Porta Ocupada**: O sistema tenta usar a porta padrão. Se falhar, use o script `iniciarSistema.bat` para resolução automática.
+- **Permissão de Script**: No Windows, se o script não rodar, tente: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.
 
 ---
-*Gerado automaticamente pelo Agente criar-iniciarmd.*
+*Gerado automaticamente pelo Agente CriarIniciar.*
+```
+
+---
+**WDK Professional Series** | *Documentação Técnica*
